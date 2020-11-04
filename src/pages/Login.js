@@ -76,6 +76,7 @@ function Login() {
   const [orgName, setOrgName] = useState("");
   const [pass, setPass] = useState("");
 
+  // eslint-disable-next-line
   const renderData = () => {
     if (!isEnglish) {
       setAnotherLang("English");
@@ -88,10 +89,7 @@ function Login() {
 
   useEffect(() => {
     renderData();
-  }, [isEnglish]);
-  useEffect(() => {
-    renderData();
-  }, []);
+  }, [isEnglish, renderData]);
 
   const langClick = () => {
     setIsEnglish(!isEnglish);
@@ -143,6 +141,7 @@ function Login() {
           </Link>
           <div className="d-flex flex-column justify-content-center ml-4 mr-4 mt-4">
             <img
+              alt="logo"
               className="mt-3"
               src={Logo}
               width={180}
@@ -361,7 +360,7 @@ function Login() {
                 }}
               >
                 <div className="d-flex justify-content-center">
-                  <img src={Logo} />
+                  <img src={Logo} alt="logo" />
                 </div>
                 <div
                   className="py-3 d-none d-md-block text-center mt-4"
