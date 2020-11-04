@@ -89,7 +89,8 @@ function Login() {
 
   useEffect(() => {
     renderData();
-  }, [isEnglish, renderData]);
+    // eslint-disable-next-line
+  }, [isEnglish]);
 
   const langClick = () => {
     setIsEnglish(!isEnglish);
